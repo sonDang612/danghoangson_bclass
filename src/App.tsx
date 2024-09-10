@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link, Route, Routes } from "react-router-dom";
+import { Fragment } from "react/jsx-runtime";
+import { publicRoutes, routeNames } from "./routes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Link to={routeNames.TOPIC_1}>topic1</Link>
+      <Link to={routeNames.TOPIC_2}>topic1</Link>
+      <Routes>
+        {publicRoutes.map((item, key) => (
+          <Route {...item} key={key} />
+        ))}
+      </Routes>
+    </Fragment>
   );
 }
 
