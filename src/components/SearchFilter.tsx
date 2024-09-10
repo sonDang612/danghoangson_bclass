@@ -88,7 +88,7 @@ export default function SearchFilter() {
   }, [cities]);
 
   const filterCost = React.useMemo(() => {
-    return rooms
+    const result = rooms
       .filter(
         (item) =>
           item.city == selectedCity && item.district === selectedDistrict
@@ -100,10 +100,12 @@ export default function SearchFilter() {
           currency: "VND",
         }),
       }));
+
+    return [...new Set(result)];
   }, [selectedCity, selectedDistrict]);
 
   const filterAreas = React.useMemo(() => {
-    return rooms
+    const result = rooms
       .filter(
         (item) =>
           item.city === selectedCity &&
@@ -114,6 +116,7 @@ export default function SearchFilter() {
         code: item.area.toString(),
         name_with_type: item.area,
       }));
+    return [...new Set(result)];
   }, [selectedCity, selectedDistrict, selectedCost, selectedArea]);
 
   return (

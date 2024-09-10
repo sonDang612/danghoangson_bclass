@@ -16,13 +16,10 @@ export default function ListRooms() {
   );
 
   function convertToMillionPerMonth(amount: number) {
-    // Chuyển đổi số tiền sang đơn vị triệu
     const inMillions = amount / 1000000;
 
-    // Làm tròn đến 2 chữ số thập phân
     const rounded = Math.round(inMillions * 100) / 100;
 
-    // Định dạng kết quả
     return rounded.toFixed(1) + " triệu/tháng";
   }
 

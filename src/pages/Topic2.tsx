@@ -244,7 +244,7 @@ const data = [
 ];
 export default function Topic2() {
   return (
-    <div className="w-1/2">
+    <div className="w-1/2 ">
       <div id="chart">
         <Chart
           series={[{ data: data }]}
